@@ -1,6 +1,6 @@
 /*
  * Segunda Classe da matéria de linguagem de programação - 12/03/2019
- * 
+ * Variaveis e Operadores
  * @author henrique.leite
  */
 
