@@ -53,6 +53,7 @@ public class Condicionais {
 		if (notaFinal >= 7.0) {
 			System.out.println("Aprovado :)");
 		}
+
 		if (notaFinal < 7.0) {
 			System.out.println("Reprovado :(");
 		}
