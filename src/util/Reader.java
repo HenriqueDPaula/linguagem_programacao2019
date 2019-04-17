@@ -1,5 +1,9 @@
 package util;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Reader {
@@ -9,6 +13,7 @@ public class Reader {
 	static Double doubleFormatado = 0.0;
 	static String stringFormatada = "";
 	static int intFormatado = 0;
+	static Date dataFormatada = null;
 
 	public static Float readFloat(String mensagem) {
 		System.out.print(mensagem);
@@ -64,6 +69,25 @@ public class Reader {
 		}
 
 		return doubleFormatado;
+	}
+
+	public static Date readDate(String mensagem) {
+		System.out.println(mensagem);
+		boolean flag = false;
+		DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		
+		while (!flag) {
+			try {
+				dataFormatada = sdf.parse(reader.nextLine());
+				flag = true;
+			} catch (NumberFormatException | ParseException e) {
+				System.out.println("Data incorreto");
+				System.out.print("Por favor digite uma data válida: ");
+			}
+		}
+		
+		return dataFormatada;
+
 	}
 
 }

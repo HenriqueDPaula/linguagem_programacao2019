@@ -39,15 +39,17 @@ public class ProgramaEstruturaDados {
 				// Devolve para uma String
 				cpfDefinitivo = i.toString();
 
-				// Cpf possui 11 dígitos
-				if (cpfDefinitivo.length() != 11)
-					throw new CPFLenghtException();
-
 				// Caso o Cpf seja: 012.345.678.99
 				if (numeroCpf.startsWith("0"))
 					cpfDefinitivo = "0" + cpfDefinitivo;
 
+				// Cpf possui 11 dígitos
+				if (cpfDefinitivo.length() != 11)
+					throw new CPFLenghtException();
+
+				// Caso tudo estiver correto, quebra o looping
 				flag = true;
+
 			} catch (NumberFormatException nfex) {
 				System.out.println("CPF inválido");
 			} catch (CPFLenghtException cpfex) {
@@ -60,7 +62,6 @@ public class ProgramaEstruturaDados {
 					System.out.println("CPF menor que o usual");
 			}
 		}
-
 		return cpfDefinitivo;
 	}
 
